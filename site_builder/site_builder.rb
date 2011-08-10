@@ -11,8 +11,6 @@ end
 
 require "../synthcity"
 
-desc = "syntax highlighting palette"
-
 def build_logo
   logo_colors = [1,5,4,7,2, 1,5,4,2]
   sentence = 'synthcity'
@@ -101,7 +99,7 @@ html = "
 <!DOCTYPE html><html>
  <head>
    <title>s y n t h c i t y</title>
-   <meta content='#{desc}' name='keywords'>
+   <meta content='a syntax highlighting palette' name='keywords'>
    <style type='text/css'>
      #{css}
    </style>
@@ -110,7 +108,7 @@ html = "
    #{build_logo}
 
    <div class='desc'>
-    #{desc} <br/>
+    a syntax highlighting palette for happiness <br/>
     <span class='end'>by <a class='author' href='http://trsp.net'>steph thirion</a></span>
    </div>
    
