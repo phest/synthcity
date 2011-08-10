@@ -11,6 +11,24 @@ end
 
 require "../synthcity"
 
+def analytics
+  "
+  <script type='text/javascript'>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25054566-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  "
+end
+
 def build_logo
   logo_colors = [1,5,4,7,2, 1,5,4,2]
   sentence = 'synthcity'
@@ -90,9 +108,6 @@ h1 {
   width: 100px; height: 100px;
 }
 
-.desc {
-  #{$colors[0]}
-}
 "
 
 html = "
@@ -104,11 +119,12 @@ html = "
      #{css}
    </style>
  </head>
+ #{analytics}
  <body>
    #{build_logo}
 
    <div class='desc'>
-    a syntax highlighting palette for happiness <br/>
+    a syntax highlighting palette for happiness<br/>
     <span class='end'>by <a class='author' href='http://trsp.net'>steph thirion</a></span>
    </div>
    
