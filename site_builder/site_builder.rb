@@ -54,10 +54,11 @@ def build_color_list
 end
 def build_color_boxes
   str = ""
-  $colors.each do |c|
-    
+  colors = [$background]+$colors
+  colors.each_with_index do |c,i|
+    klass = (i==0) ? 'color_box_bg' : 'color_box'
     css = "background-color:#{c.hex};"
-    str << "<div class='color_box' style='#{css};'>#{c.rgb}<br/>#{c.hex}</div>"
+    str << "<div class='#{klass}' style='#{css};'>#{c.rgb}<br/>#{c.hex}</div>"
   end
   str
 end
@@ -95,17 +96,26 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.color_box {
+.color_box, .color_box_bg, .color_box_sp {
   font-size: 0px;
   padding: 5px;
   width: 15px; height: 15px;
   float: left;
   text-align: center;
 }
-.color_box:hover {
+.color_box:hover, .color_box_bg:hover, .color_box_sp:hover {
   color: #{$background.hex};
   font-size: 13px;
   width: 100px; height: 100px;
+}
+.color_box_bg {
+  border-style:solid;
+  border-width:4px;
+  border-color: #{$colors[0].hex};
+  width: 7px; height: 7px;
+}
+.color_box_bg:hover {
+  color: #{$colors[0].hex};
 }
 
 "
