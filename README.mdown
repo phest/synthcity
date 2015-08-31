@@ -1,6 +1,8 @@
 
 # Synth City
 
-A syntax highlighting palette for happiness. [http://phest.github.com/synthcity](http://phest.github.com/synthcity)
+A syntax highlighting palette. [http://phest.github.com/synthcity](http://phest.github.com/synthcity)
 
-![](https://raw.githubusercontent.com/phest/synthcity-atom-syntax/master/preview.png)
+<img src="https://raw.githubusercontent.com/phest/synthcity-atom-syntax/master/card.png" alt="card" width="384"/>
+
+<img src="https://raw.githubusercontent.com/phest/synthcity-atom-syntax/master/preview_objc.png" alt="preview_objc" width="384"/>
