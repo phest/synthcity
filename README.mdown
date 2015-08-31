@@ -3,6 +3,9 @@
 
 A syntax highlighting palette. [http://phest.github.com/synthcity](http://phest.github.com/synthcity)
 
+- [Atom theme](https://atom.io/themes/synthcity-atom-syntax)
+- [TextMate theme](https://github.com/prestia/textmate-synthcity)
+
 <img src="https://raw.githubusercontent.com/phest/synthcity-atom-syntax/master/card.png" alt="card" width="384"/>
 
 <img src="https://raw.githubusercontent.com/phest/synthcity-atom-syntax/master/preview_objc.png" alt="preview_objc" width="384"/>
