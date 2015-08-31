@@ -160,7 +160,7 @@ html = "
 
 
    <br />
-   <span class='white'>-> <span class='green'>Atom</span> <a https://atom.io/themes/synthcity-atom-syntax'>theme</a></span>
+   <span class='white'>-> <span class='green'>Atom</span> <a href='https://atom.io/themes/synthcity-atom-syntax'>theme</a></span>
    <br />
    <span class='white'>-> <span class='purple'>TextMate</span> <a href='https://github.com/prestia/textmate-synthcity'>theme</a></span>
    <br />
