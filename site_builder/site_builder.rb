@@ -151,7 +151,7 @@ html = "
    #{build_logo}
 
    <div class='desc'>
-    a syntax highlighting palette for happiness<br/>
+    a syntax highlighting palette<br/>
     <span>by <a class='author' href='http://trsp.net'>steph thirion</a></span>
    </div>
 
