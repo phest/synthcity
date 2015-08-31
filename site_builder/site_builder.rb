@@ -9,7 +9,7 @@ def color(name,r,g,b, line=:jump) # line arg is for site build
   return c
 end
 
-require "../synthcity"
+require_relative "../synthcity"
 
 def analytics
   "
@@ -73,19 +73,19 @@ body {
   margin-left: 30px; margin-right: 30px;
 }
 a {
-  
+
 }
 a, a:visited {
-  color: #{$colors[8].hex};
+  color: #{$colors[1].hex};
 }
 a:hover {
-  color: #{$colors[1].hex};
+  color: #{$colors[4].hex};
 }
 a.author, a.author:visited {
   color: #{$colors[3].hex};
 }
 a.author:hover {
-  color: #{$colors[1].hex};
+  color: #{$colors[5].hex};
 }
 h1 {
   font-size: 20px;
@@ -117,13 +117,30 @@ h1 {
 .color_box_bg:hover {
   color: #{$colors[0].hex};
 }
-
 "
+$colors.each do |color|
+  css += "
+  .#{color.name} {
+    color: #{color.hex};
+  }
+  "
+end
+
+
+ribbon_orange = <<RIBBON
+<a href="http://github.com/phest/synthcity"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+RIBBON
+ribbon_gray = <<RIBBON
+<a href="http://github.com/phest/synthcity"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+RIBBON
+ribbon_white = <<RIBBON
+<a href="http://github.com/phest/synthcity"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+RIBBON
 
 html = "
 <!DOCTYPE html><html>
  <head>
-   <title>s y n t h c i t y</title>
+   <title>Synth City</title>
    <meta content='a syntax highlighting palette' name='keywords'>
    <style type='text/css'>
      #{css}
@@ -135,27 +152,33 @@ html = "
 
    <div class='desc'>
     a syntax highlighting palette for happiness<br/>
-    <span class='end'>by <a class='author' href='http://trsp.net'>steph thirion</a></span>
+    <span>by <a class='author' href='http://trsp.net'>steph thirion</a></span>
    </div>
-   
+
    #{build_color_list}
    <br /> <br />
-   
-   <span class='end'>see an application example <a href='objc.png'>here</a></span>
+
+
    <br />
-   <span class='end'>another palette: <a href='http://ethanschoonover.com/solarized'>solarized</a></span>
-   
+   <span class='white'>-> <span class='green'>Atom</span> <a href='https://github.com/phest/synthcity-atom-syntax'>theme</a></span>
    <br />
-   
+   <span class='white'>-> <span class='purple'>TextMate</span> <a href='https://github.com/prestia/textmate-synthcity'>theme</a></span>
+   <br />
+   <br />
+   <span>See an application example <a href='objc.png'>here</a></span>
+   <br />
+
    <br /><br /><br />
-   
-   
+
+
    #{build_color_boxes}
-   
 
 
-   
-<a href='http://github.com/phest/synthcity'><img style='position: absolute; top: 0; right: 0; border: 0;' src='https://a248.e.akamai.net/assets.github.com/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67' alt='Fork me on GitHub'></a>
+
+
+<a href='http://github.com/phest/synthcity'>
+  #{ribbon_gray}
+</a>
  </body>
 </html>
 "
